@@ -1,5 +1,5 @@
 
-from flask import Flask,render_template
+from flask import Flask,render_template,jsonify
 
 
 app = Flask(__name__)
@@ -16,6 +16,8 @@ students = [
 @app.route('/')
 def home():
     return render_template("file.html", students=students)
-
+@app.route('/students')
+def get_students():
+    return jsonify(students)
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3000, debug=True)

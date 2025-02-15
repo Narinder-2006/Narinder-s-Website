@@ -1,75 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Narinder's web application</title>
+  <title>Narinder's Web Application</title>
   <style>
     .title {
       font-size: 60px;
       font-weight: bold;
       text-align: center;
     }
-    h1,h3{
-       
-        font-size: 30px;
-        font-weight: bold;
-        text-align: center;
-      
+    h1, h3 {
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
     }
-    p{
-      text-align:center;
+    p {
+      text-align: center;
     }
-    #bg{
-      width=100%;
-      margin-left:140px;
+    #bg {
+      display: block;
+      margin: 0 auto;
     }
-    form{
-      font-display: bold;
+    form {
       font-size: 20px;
       text-align: center;
-      
+    }
+    .student-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .student-card {
+      width: 300px;
+      border: 2px solid #000;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+      background-color: #f9f9f9;
+    }
+    .join-button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 15px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .join-button:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
-  <h1 class="title">Narinder's new Mentorship program</h1>
-  <img id="bg" src="/static/new.png" alt="Welcome image" height =300 >
-  <h2>Hello, this is my first web application </h1>
+  <h1 class="title">Narinder's New Mentorship Program</h1>
+  <img id="bg" src="/static/new.png" alt="Welcome image" height="300">
   <h1>Introduction</h1>
-  <p>i am currently pursuing my Btech from nit jalandhar and going to open an mentorship program for JEE aspirants . </p>
+  <p>I am currently pursuing my B.Tech from NIT Jalandhar and starting a mentorship program for JEE aspirants.</p>
   <h1>Features</h1>
-  <p>It will contain --</p>
-  <h3>  Guidance about books to follow</h3>
-  <h3>  Approachg to learn new skill</h3>
-  <h3>  Doubt solving sessions</h3>
-  <h3>  Online tests PYQ solving sessions</h3>
-  <h1>How to apply?</h1>
-  <p>You can apply by filling the form given below</p>
-  <div id="formfill" >
-    <form>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" value=""><br>
-      <label for="email">Email:</label>
-      <input type="text" id="email" name="email" value=""><br>
-      <label for="phone">Phone:</label>
-      <input type="text" id="phone" name="phone" value=""><br>
-      <label for="message">Message:</label>
-      <input type="text" id="message" name="message" value=""><br><br>
-      <input type="submit" value="Submit">
-    </form>
-    
-    
-  </div>
-  <div> 
-  <h1>Our shining stars </h1>
+  <p>It will contain:</p>
+  <h3>Guidance about books to follow</h3>
+  <h3>Approach to learn new skills</h3>
+  <h3>Doubt-solving sessions</h3>
+  <h3>Online tests & PYQ solving sessions</h3>
+  <h1>How to Apply?</h1>
+  <p>You can apply by filling out the form below:</p>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email"><br>
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone"><br>
+    <label for="message">Message:</label>
+    <input type="text" id="message" name="message"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+  
+  <h1>Our Shining Stars</h1>
+  <div class="student-container">
     {% for student in students %}
-      <div>
-       <h4> {{ student.name }}</h4>
+      <div class="student-card">
+        <h2><b>Name:</b> {{ student["name"] }}</h2>
+        <h4><b>AIR:</b> {{ student["rank"] }}</h4>
+        <h4><b>Batch:</b> {{ student["batch"] }}</h4>
+        <h4><b>Graduating at:</b> {{ student["university"] }}</h4>
+        <button class="join-button">Join</button>
       </div>
     {% endfor %}
   </div>
   
-  <h1>contact us</h1>
-  <p>you can contact me on my email id</p>
+  <h1>Contact Us</h1>
+  <p>You can contact me via email:</p>
   <p>narinder.singh@gmail.com</p>
 </body>
 </html>
