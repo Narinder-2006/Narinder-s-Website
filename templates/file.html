@@ -8,15 +8,31 @@
       font-weight: bold;
       text-align: center;
     }
+    h1,h3{
+       
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+      
+    }
+    p{
+      text-align:center;
+    }
     #bg{
       width=100%;
-      height=13px;
+      margin-left:140px;
+    }
+    form{
+      font-display: bold;
+      font-size: 20px;
+      text-align: center;
+      
     }
   </style>
 </head>
 <body>
   <h1 class="title">Narinder's new Mentorship program</h1>
-  <img id="bg" src="/static/new.png" alt="Welcome image" width="700" height="200">
+  <img id="bg" src="/static/new.png" alt="Welcome image" height =300 >
   <h2>Hello, this is my first web application </h1>
   <h1>Introduction</h1>
   <p>i am currently pursuing my Btech from nit jalandhar and going to open an mentorship program for JEE aspirants . </p>
@@ -28,7 +44,29 @@
   <h3>  Online tests PYQ solving sessions</h3>
   <h1>How to apply?</h1>
   <p>You can apply by filling the form given below</p>
-  
+  <div id="formfill" >
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" value=""><br>
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" value=""><br>
+      <label for="phone">Phone:</label>
+      <input type="text" id="phone" name="phone" value=""><br>
+      <label for="message">Message:</label>
+      <input type="text" id="message" name="message" value=""><br><br>
+      <input type="submit" value="Submit">
+    </form>
+    
+    
+  </div>
+  <div> 
+  <h1>Our shining stars </h1>
+    {%for student in students%}
+      <div>
+        {{Student.name}}
+      
+      </div>
+  </div>
   
   <h1>contact us</h1>
   <p>you can contact me on my email id</p>
