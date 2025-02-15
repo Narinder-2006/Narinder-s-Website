@@ -15,7 +15,7 @@ students = [
 
 @app.route('/')
 def home():
-    return render_template("file.html")
+    return render_template("file.html", students=students)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3000, debug=True)
