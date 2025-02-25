@@ -75,6 +75,37 @@
     .join-button:hover {
       background-color: #0056b3;
     }
+
+    /* Footer Styles */
+    .footer {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+    }
+
+    .footer a:hover {
+      color: #ddd;
+    }
+
+    .footer .social-icons {
+      margin-top: 10px;
+    }
+
+    .footer .social-icons a {
+      font-size: 24px;
+      margin: 0 10px;
+    }
   </style>
 </head>
 <body>
@@ -131,7 +162,7 @@
           <h4><b>AIR:</b> {{ student["rank"] }}</h4>
           <h4><b>Batch:</b> {{ student["batch"] }}</h4>
           <h4><b>Graduating at:</b> {{ student["university"] }}</h4>
-          <button class="join-button">Join</button>
+          <a href="mailto:singhnoor891@gmail.com?subject=Regarding%20mentorship%20under%20{{student['name']}}&body=name%3A%3Cyour%20name%3E%0Apercentage%22%3Cyour%20percentage%3E" type="button" class="join-button">Join</a>
         </div>
       {% endfor %}
     </div>
@@ -141,6 +172,17 @@
     <h1>Contact Us</h1>
     <p>You can contact me via email:</p>
     <p>narinder.singh@gmail.com</p>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2025 Narinder's Mentorship Program | All Rights Reserved</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com" target="_blank">Facebook</a>
+      <a href="https://www.twitter.com" target="_blank">Twitter</a>
+      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+      <a href="https://www.instagram.com" target="_blank">Instagram</a>
+    </div>
   </div>
 
 </body>
